@@ -4,7 +4,6 @@ import { Client } from '@googlemaps/google-maps-services-js';
 const client = new Client({});
 
 export async function POST(request: Request) {
-  console.log("g", process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY)
   try {
     const { address, radius, keywords } = await request.json();
     const geocodeResponse = await client.geocode({
