@@ -6,12 +6,10 @@ const client = new Client({});
 export async function POST(request: Request) {
   try {
     const { address, radius, keywords } = await request.json();
-    console.log(process.env.GOOGLE_MAPS_API_KEY)
-    console.log(process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY)
     const geocodeResponse = await client.geocode({
       params: {
         address,
-        key: process.env.GOOGLE_MAPS_API_KEY || '',
+        key: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '',
       },
     });
 
@@ -26,7 +24,7 @@ export async function POST(request: Request) {
         location,
         radius: radius * 1000,
         keyword: keywords,
-        key: process.env.GOOGLE_MAPS_API_KEY || '',
+        key: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '',
       },
     });
 
@@ -38,7 +36,7 @@ export async function POST(request: Request) {
             params: {
               place_id: place.place_id,
               fields: ['formatted_phone_number', 'website', 'rating', 'user_ratings_total', 'url'],
-              key: process.env.GOOGLE_MAPS_API_KEY || '',
+              key: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '',
             },
           });
           details = detailsResponse.data.result;
