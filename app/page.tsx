@@ -18,6 +18,7 @@ export default function Home() {
     keywords: string;
   }) => {
     setLoading(true);
+    console.log("m", process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY)
     try {
       const response = await fetch('/api/search', {
         method: 'POST',
