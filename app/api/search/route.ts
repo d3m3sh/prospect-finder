@@ -6,7 +6,8 @@ const client = new Client({});
 export async function POST(request: Request) {
   try {
     const { address, radius, keywords } = await request.json();
-
+    console.log(process.env.GOOGLE_MAPS_API_KEY)
+    console.log(process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY)
     const geocodeResponse = await client.geocode({
       params: {
         address,
