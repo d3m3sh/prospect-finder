@@ -114,7 +114,7 @@ function ProspectTableContent({ prospects, onProspectUpdate, onProspectDelete }:
                   <MapsLink
                     name={prospect.name}
                     address={prospect.address}
-                    mapsUrl={prospect.mapsUrl}
+                    // mapsUrl={prospect.mapsUrl}
                   />
                 </TableCell>
                 <TableCell>{prospect.address}</TableCell>

@@ -58,7 +58,7 @@ function ResultsTableContent({ results }: { results: Business[] }) {
                   <MapsLink
                     name={result.name}
                     address={result.address}
-                    mapsUrl={result.mapsUrl}
+                    // mapsUrl={result.mapsUrl}
                   />
                 </TableCell>
                 <TableCell>{result.address}</TableCell>

@@ -24,7 +24,7 @@ export function SelectableTableRow({ id, children, status }: TableRowProps) {
 
   return (
     <TableRow className={cn(getStatusColor(status))}>
-      <TableCell padding="checkbox">
+      <TableCell >
         <RowCheckbox id={id} />
       </TableCell>
       {children}
